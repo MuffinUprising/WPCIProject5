@@ -1,0 +1,35 @@
+<html>
+    {% load staticfiles %}
+    <head>
+        <title>WPCI</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/wizardpokercardindex.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=IM+Fell+English' rel='stylesheet' type='text/css'>
+
+    </head>
+    <body>
+        <div class="page-header">
+            <h1>WPCI</h1>
+            <h3>Wizard Poker Card Index</h3>
+        </div>
+
+        <div class="search container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block search %}
+                    {% endblock search %}
+                </div>
+            </div>
+        </div>
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

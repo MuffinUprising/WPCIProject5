@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def card_list(request):
+    return render(request, 'cardsearch/card_list.html', {})
