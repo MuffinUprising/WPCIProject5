@@ -31,16 +31,16 @@ class Card(models.Model):
     attack = models.IntegerField(null=True)
     # Minion only
     health = models.IntegerField(null=True)
-    mechanics = models.TextField(null=True)
+    # mechanics = models.TextField(null=True)
 
     # Not all cards have card text
-    card_text = models.TextField(null=True)
-
-    # Only available for class-specific cards
-    player_class = models.CharField(max_length=12, null=True)
+    # card_text = models.TextField(null=True)
+    #
+    # # Only available for class-specific cards
+    # player_class = models.CharField(max_length=12, null=True)
 
     # Weapon only (Note: weapon also has attack value)
-    weapon_durability = models.IntegerField(null=True)
+    # weapon_durability = models.IntegerField(null=True)
 
     def __str__(self):
         return self.card_name

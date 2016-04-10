@@ -1,0 +1,25 @@
+{% extends 'cardsearch/base.html' %}
+
+{% block content %}
+    <div class="card">
+        <div class="name">
+            <h2>{{ card.card_name }}</h2>
+        </div>
+        <p>Card Type: {{ card.type }}</p>
+        <p>Card ID: {{ card.card_id }}</p>
+        <p>Mana Cost: {{ card.mana_cost }}</p>
+        <p>Rarity: {{ card.rarity }}</p>
+        <p>Attack: {{ card.attack }}</p>
+        <p>Health: {{ card.health }}</p>
+        <p>Artist: {{ card.artist }}</p>
+        <p>Collectible: {{ card.collectible }}</p>
+        <p>Flavor Text: {{ card.flavor_text|linebreaks }}</p>
+        <p>Set: {{ card.card_set }}</p>
+        <p><b>Dust Values</b></p>
+        <p>Cost to enchant: {{ card.dust_cost }}</p>
+        <p>Value of disenchant: {{ card.dust_value }}</p>
+        <p>Cost to enchant golden: {{ card.golden_dust_cost }}</p>
+        <p>Value to disenchant golden: {{ card.golden_dust_value }}</p>
+        <br>
+    </div>
+{% endblock %}

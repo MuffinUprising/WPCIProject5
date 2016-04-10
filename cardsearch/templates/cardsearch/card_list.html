@@ -1,35 +1,17 @@
-<html>
-    {% load staticfiles %}
-    <head>
-        <title>WPCI</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/wizardpokercardindex.css' %}">
-        <link href='https://fonts.googleapis.com/css?family=IM+Fell+English' rel='stylesheet' type='text/css'>
+{% extends 'cardsearch/base.html' %}
 
-    </head>
-    <body>
-        <div class="page-header">
-            <h1>WPCI</h1>
-            <h3>Wizard Poker Card Index</h3>
-        </div>
-
-        <div class="search container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block search %}
-                    {% endblock search %}
-                </div>
+{% block content %}
+    {% for card in cards %}
+        <div class="card">
+            <div class="name">
+                <h2><a href="{% url 'card_detail' pk=card.pk %}">{{ card.card_name }}</a></h2>
             </div>
+            <p>Card Type: {{ card.type }}</p>
+            <p>Mana Cost: {{ card.mana_cost }}</p>
+            <p>Rarity: {{ card.rarity }}</p>
+            <p>Attack: {{ card.attack }}</p>
+            <p>Health: {{ card.health }}</p>
+            <br>
         </div>
-
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock content %}
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}

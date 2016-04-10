@@ -1,0 +1,48 @@
+.page-header {
+    background-color: #8A682B;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 40pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    color: #FFFFFF;
+    font-family: 'IM Fell English';
+}
+
+.content h1, h2, h3, h4 {
+    color: #8A682B;
+    font-family: 'IM Fell English';
+}
+
+h3 {
+    font-size: 10pt;
+}
+
+.save {
+    float: right;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.search {
+    margin-left: 40px;
+}
+
+.content container {
+    margin-left: 40px;
+}
