@@ -3,10 +3,20 @@ from .models import Card
 import json
 
 
-def card_list(request):
-    add_minions_to_site_db()
-    cards = Card.objects.order_by('card_name')
-    return render(request, 'cardsearch/card_list.html', {'cards': cards})
+def search(request):
+    user_query = request.GET.get('user_query')
+    card_list(user_query)
+
+
+def card_list(q):
+    # add_minions_to_site_db()
+    cards = Card.objects.all()
+    return_cards = []
+    for card in cards:
+        if q in card['card_name']:
+            new_card = card
+            return_cards.append(new_card)
+    return render(q, 'cardsearch/card_list.html', {'cards': return_cards})
 
 def card_detail(request, pk):
     card = get_object_or_404(Card, pk=pk)

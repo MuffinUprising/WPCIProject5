@@ -1,0 +1,14 @@
+{% extends 'cardsearch/base.html' %}
+
+{% block search %}
+
+    <div class="search">
+        <p>Enter a card name to search</p>
+        <form role="form" action="/wizardpokercardindex/" method="get">
+        <p><label for="id_search">Card Name:</label>
+        <input id="id_search" type="text" name="user_query">
+        <input type="submit" value="Search"></p>
+        </form>
+    </div>
+
+{% endblock %}

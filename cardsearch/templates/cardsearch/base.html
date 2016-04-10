@@ -13,8 +13,13 @@
             <h3>Wizard Poker Card Index</h3>
         </div>
 
-        <div>
-
+        <div class="search">
+            <p>Enter a card name to search</p>
+            <form role="form" action="/search/" method="get">
+            <p><label for="id_search">Card Name:</label>
+            <input id="id_search" type="text" name="user_query">
+            <input type="submit" value="Search"></p>
+            </form>
         </div>
         {% block content %}
         {% endblock %}
