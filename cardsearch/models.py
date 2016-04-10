@@ -22,25 +22,25 @@ class Card(models.Model):
     # Epic dust:[400,1600,100,400]
     # Legendary dust:[1600,3200,400,1600]
 
-    dust_cost = models.IntegerField()
-    dust_value = models.IntegerField()
-    golden_dust_cost = models.IntegerField()
-    golden_dust_value = models.IntegerField()
+    dust_cost = models.IntegerField(blank=True)
+    dust_value = models.IntegerField(blank=True)
+    golden_dust_cost = models.IntegerField(blank=True)
+    golden_dust_value = models.IntegerField(blank=True)
 
     # Minion and Weapon
-    attack = models.IntegerField()
+    attack = models.IntegerField(blank=True)
     # Minion only
-    health = models.IntegerField()
-    mechanics = models.TextField()
+    health = models.IntegerField(blank=True)
+    mechanics = models.TextField(blank=True)
 
     # Not all cards have card text
-    card_text = models.TextField()
+    card_text = models.TextField(blank=True)
 
     # Only available for class-specific cards
-    player_class = models.CharField(max_length=12)
+    player_class = models.CharField(max_length=12, blank=True)
 
     # Weapon only (Note: weapon also has attack value)
-    weapon_durability = models.IntegerField()
+    weapon_durability = models.IntegerField(blank=True)
 
     def __str__(self):
         return self.card_name
