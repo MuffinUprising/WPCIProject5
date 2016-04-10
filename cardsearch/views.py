@@ -4,7 +4,7 @@ import json
 
 
 def card_list(request):
-    # add_minions_to_site_db()
+    add_minions_to_site_db()
     cards = Card.objects.order_by('card_name')
     return render(request, 'cardsearch/card_list.html', {'cards': cards})
 
