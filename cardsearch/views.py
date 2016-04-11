@@ -102,6 +102,10 @@ def add_spells_to_site_db(current_catalog):
             text = item["text"]
 
             check_rarity(item)
+            dust_cost = check_rarity(item.d_cost)
+            dust_value = check_rarity(item.d_value)
+            golden_dust_cost = check_rarity(item.gd_cost)
+            golden_dust_value = check_rarity(item.dg_value)
 
             Spell.objects.create(card_id='id',
                                type='type',
@@ -149,6 +153,10 @@ def add_weapons_to_site_db(current_catalog):
             weapon_durability = item[""]
 
             check_rarity(item)
+            dust_cost = check_rarity(item.d_cost)
+            dust_value = check_rarity(item.d_value)
+            golden_dust_cost = check_rarity(item.gd_cost)
+            golden_dust_value = check_rarity(item.dg_value)
 
             Weapon.objects.create(card_id='id',
                                type='type',
@@ -177,31 +185,31 @@ def add_all_cards(current_catalog):
 
 # CHECK RARITY
 def check_rarity(card):
-
+    # COMMON
     if card["rarity"] == "COMMON":
         d_cost = 40
         gd_cost = 400
         d_value = 5
         gd_value = 50
-
+    # RARE
     elif card["rarity"] == "RARE":
         d_cost = 100
         gd_cost = 800
         d_value = 20
         gd_value = 100
-
+    # EPIC
     elif card["rarity"] == "EPIC":
         d_cost = 400
         gd_cost = 1600
         d_value = 100
         gd_value = 400
-
+    # LEGENDARY
     elif card["rarity"] == "LEGENDARY":
         d_cost = 1600
         gd_cost = 3200
         d_value = 400
         gd_value = 1600
-
+    # FREE
     else:
         d_cost = 0
         gd_cost = 0
