@@ -10,6 +10,11 @@
     text-decoration: none;
 }
 
+.page_header h3, .page-header h3 a, .page-header h3 a:visited, .page-header h3 a:active  {
+    color: #ffffff;
+    font-size: 12pt;
+}
+
 .content {
     margin-left: 40px;
 }
@@ -19,7 +24,7 @@ h1, h2, h3, h4 {
     font-family: 'IM Fell English';
 }
 
-.content h1, h2, h3, h4 {
+.content h1, h2, h4 {
     color: #8A682B;
     font-family: 'IM Fell English';
 }

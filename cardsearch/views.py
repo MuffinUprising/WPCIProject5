@@ -2,21 +2,23 @@ from django.shortcuts import render, get_object_or_404
 from .models import Card
 import json
 
+def index(request):
+
+    return render(request, 'cardsearch/base.html', {})
 
 def search(request):
-    user_query = request.GET.get('user_query')
-    card_list(user_query)
+    q = request.GET.get('user_query')
+    card_list(request, q)
 
 
-def card_list(q):
+def card_list(request, q):
     # add_minions_to_site_db()
-    cards = Card.objects.all()
+    cards = Card.objects.filter(card_name__icontains=q)
     return_cards = []
     for card in cards:
-        if q in card['card_name']:
-            new_card = card
-            return_cards.append(new_card)
-    return render(q, 'cardsearch/card_list.html', {'cards': return_cards})
+        new_card = card
+        return_cards.append(new_card)
+    return render(request, 'cardsearch/card_list.html', {'cards': return_cards})
 
 def card_detail(request, pk):
     card = get_object_or_404(Card, pk=pk)
