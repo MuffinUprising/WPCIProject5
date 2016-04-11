@@ -8,17 +8,16 @@ def index(request):
 
 def search(request):
     q = request.GET.get('user_query')
-    card_list(request, q)
-
-
-def card_list(request, q):
-    # add_minions_to_site_db()
-    cards = Card.objects.filter(card_name__icontains=q)
-    return_cards = []
-    for card in cards:
-        new_card = card
-        return_cards.append(new_card)
+    return_cards = search_for_card_by_name(q)
     return render(request, 'cardsearch/card_list.html', {'cards': return_cards})
+
+
+
+def card_list(request):
+    # add_minions_to_site_db()
+    cards = Card.objects.filter().order_by('card_name')
+    return render(request, 'cardsearch/card_list.html', {'cards': cards})
+
 
 def card_detail(request, pk):
     card = get_object_or_404(Card, pk=pk)
@@ -90,6 +89,17 @@ def add_minions_to_site_db():
                                golden_dust_value=golden_dust_value)
 
             print("Added " + item['name'] + " to database..")
+
+
+def search_for_card_by_name(q):
+
+    cards = Card.objects.filter(card_name__icontains=q)
+    return_cards = []
+    for card in cards:
+        new_card = card
+        return_cards.append(new_card)
+    return return_cards
+
 
 
 def add_cards_to_site_db():
