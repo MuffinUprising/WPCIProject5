@@ -27,7 +27,7 @@ class Card(models.Model):
     golden_dust_cost = models.IntegerField(null=True)
     golden_dust_value = models.IntegerField(null=True)
 
-
+    # Some cards have mechanics such as "CHARGE" or "TAUNT"
     # mechanics = models.TextField(null=True)
 
     # Not all cards have card text
@@ -40,17 +40,15 @@ class Card(models.Model):
         return self.card_name
 
 
-class Minion(models.Model, Card):
-    # Minion and Weapon
+class Minion(Card):
     attack = models.IntegerField(null=True)
-    # Minion only
     health = models.IntegerField(null=True)
 
 
-class Spell(models.Model, Card):
+class Spell(Card):
     card_text = models.TextField(null=True)
 
 
-
-class Weapon(models.Model, Card):
+class Weapon(Card):
+    attack = models.IntegerField(null=True)
     weapon_durability = models.IntegerField(null=True)
