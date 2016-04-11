@@ -27,10 +27,7 @@ class Card(models.Model):
     golden_dust_cost = models.IntegerField(null=True)
     golden_dust_value = models.IntegerField(null=True)
 
-    # Minion and Weapon
-    attack = models.IntegerField(null=True)
-    # Minion only
-    health = models.IntegerField(null=True)
+
     # mechanics = models.TextField(null=True)
 
     # Not all cards have card text
@@ -39,8 +36,21 @@ class Card(models.Model):
     # # Only available for class-specific cards
     # player_class = models.CharField(max_length=12, null=True)
 
-    # Weapon only (Note: weapon also has attack value)
-    # weapon_durability = models.IntegerField(null=True)
-
     def __str__(self):
         return self.card_name
+
+
+class Minion(models.Model, Card):
+    # Minion and Weapon
+    attack = models.IntegerField(null=True)
+    # Minion only
+    health = models.IntegerField(null=True)
+
+
+class Spell(models.Model, Card):
+    card_text = models.TextField(null=True)
+
+
+
+class Weapon(models.Model, Card):
+    weapon_durability = models.IntegerField(null=True)

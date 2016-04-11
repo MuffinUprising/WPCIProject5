@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cardsearch/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3781">
-              <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.47682118" vertical-offset="4466" max-vertical-offset="6707">
+              <caret line="254" column="0" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -85,11 +85,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="card_detail.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="card_detail.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cardsearch/templates/cardsearch/card_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38" vertical-offset="0" max-vertical-offset="750">
+            <state vertical-scroll-proportion="-10.178572" vertical-offset="0" max-vertical-offset="570">
               <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cardsearch/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="52" max-vertical-offset="1159">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cards.collectible.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/json_files/cards.collectible.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.30769232" vertical-offset="84" max-vertical-offset="190">
+              <caret line="4" column="2103" selection-start-line="4" selection-start-column="2101" selection-end-line="4" selection-end-column="2103" />
               <folding />
             </state>
           </provider>
@@ -111,14 +131,14 @@
         <option value="$PROJECT_DIR$/wpcisite/urls.py" />
         <option value="$PROJECT_DIR$/AddCardsToSiteDB.py" />
         <option value="$PROJECT_DIR$/cardsearch/AddCardsToSiteDB.py" />
-        <option value="$PROJECT_DIR$/cardsearch/models.py" />
         <option value="$PROJECT_DIR$/cardsearch/templates/cardsearch/card_detail.html" />
         <option value="$PROJECT_DIR$/cardsearch/templates/cardsearch/card_list.html" />
         <option value="$PROJECT_DIR$/cardsearch/templates/cardsearch/search.html" />
-        <option value="$PROJECT_DIR$/cardsearch/views.py" />
         <option value="$PROJECT_DIR$/cardsearch/urls.py" />
         <option value="$PROJECT_DIR$/cardsearch/static/css/cardsearch.css" />
         <option value="$PROJECT_DIR$/cardsearch/templates/cardsearch/base.html" />
+        <option value="$PROJECT_DIR$/cardsearch/models.py" />
+        <option value="$PROJECT_DIR$/cardsearch/views.py" />
       </list>
     </option>
   </component>
@@ -468,6 +488,9 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a01077d7-e96d-48c8-bd72-b157d82f6cc3" name="Default" comment="" />
@@ -501,7 +524,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980132" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16913319" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -685,14 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cardsearch/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23360656" vertical-offset="475" max-vertical-offset="969">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cardsearch/templates/cardsearch/card_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="418">
@@ -725,6 +740,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cardsearch/templates/cardsearch/card_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.178572" vertical-offset="0" max-vertical-offset="570">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cardsearch/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1159">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cardsearch/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="266">
@@ -733,21 +764,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cardsearch/views.py">
+    <entry file="file://$PROJECT_DIR$/json_files/cards.collectible.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3781">
-          <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.30769232" vertical-offset="0" max-vertical-offset="190">
+          <caret line="4" column="2103" selection-start-line="4" selection-start-column="2101" selection-end-line="4" selection-end-column="2103" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cardsearch/templates/cardsearch/card_detail.html">
+    <entry file="file://$PROJECT_DIR$/cardsearch/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38" vertical-offset="0" max-vertical-offset="750">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-          <folding />
+        <state vertical-scroll-proportion="0.47682118" vertical-offset="4466" max-vertical-offset="6707">
+          <caret line="254" column="0" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

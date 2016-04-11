@@ -2,15 +2,18 @@ from django.shortcuts import render, get_object_or_404
 from .models import Card
 import json
 
+current_catalog = json.loads(open('json_files/cards.collectible.json').read())
+
+
 def index(request):
 
     return render(request, 'cardsearch/base.html', {})
+
 
 def search(request):
     q = request.GET.get('user_query')
     return_cards = search_for_card_by_name(q)
     return render(request, 'cardsearch/card_list.html', {'cards': return_cards})
-
 
 
 def card_list(request):
@@ -22,6 +25,17 @@ def card_list(request):
 def card_detail(request, pk):
     card = get_object_or_404(Card, pk=pk)
     return render(request, 'cardsearch/card_detail.html', {'card': card})
+
+
+def search_for_card_by_name(q):
+
+    cards = Card.objects.filter(card_name__icontains=q)
+    return_cards = []
+    for card in cards:
+        new_card = card
+        return_cards.append(new_card)
+    return return_cards
+
 
 def add_minions_to_site_db():
     current_catalog = json.loads(open('json_files/cards.collectible.json').read())
@@ -91,20 +105,160 @@ def add_minions_to_site_db():
             print("Added " + item['name'] + " to database..")
 
 
-def search_for_card_by_name(q):
+def add_spells_to_site_db(current_catalog):
 
-    cards = Card.objects.filter(card_name__icontains=q)
-    return_cards = []
-    for card in cards:
-        new_card = card
-        return_cards.append(new_card)
-    return return_cards
+    for item in current_catalog:
+        if item["type"] == 'SPELL':
+            # grab values
+            # ID
+            id = item["id"]
+            # TYPE
+            type = item['type']
+            # NAME
+            name = item['name']
+            # MANA
+            mana = str(item['cost'])
+            # RARITY
+            rarity = item['rarity']
+            # ARTIST
+            artist = item["artist"]
+            # COLLECTIBLE - bool
+            collectible = bool(item["collectible"])
+            # FLAVOR TEXT
+            flavor = item["flavor"]
+            # SET
+            card_set = item["set"]
+            # CARD TEXT
+            text = item["text"]
+
+            if item["rarity"] == "COMMON":
+                dust_cost = 40
+                golden_dust_cost = 400
+                dust_value = 5
+                golden_dust_value = 50
+
+            elif item["rarity"] == "RARE":
+                dust_cost = 100
+                golden_dust_cost = 800
+                dust_value = 20
+                golden_dust_value = 100
+
+            elif item["rarity"] == "EPIC":
+                dust_cost = 400
+                golden_dust_cost = 1600
+                dust_value = 100
+                golden_dust_value = 400
+
+            elif item["rarity"] == "LEGENDARY":
+                dust_cost = 1600
+                golden_dust_cost = 3200
+                dust_value = 400
+                golden_dust_value = 1600
+
+            elif item["rarity"] == "FREE":
+                dust_cost = 0
+                golden_dust_cost = 0
+                dust_value = 0
+                golden_dust_value = 0
+
+            card_result = Card(card_id='id',
+                               type='type',
+                               card_name='name',
+                               mana_cost='mana',
+                               rarity='rarity',
+                               artist='artist',
+                               collectible='collectible',
+                               flavor_text='flavor',
+                               card_set='card_set',
+                               card_text='text',
+                               dust_cost='dust_cost',
+                               dust_value='dust_value',
+                               golden_dust_cost='golden_dust_cost',
+                               golden_dust_value='golden_dust_value',
+                               )
+
+            Card.objects.create(card_result)
+            print("Added " + card_result.card_name + " to database..")
 
 
+def add_weapons_to_site_db():
 
-def add_cards_to_site_db():
-    current_catalog = json.loads(open('json_files/cards.collectible.json').read())
+    for item in current_catalog:
+        if item["type"] == 'WEAPON':
+            # grab values
+            # ID
+            id = item["id"]
+            # TYPE
+            type = item['type']
+            # NAME
+            name = item['name']
+            # MANA
+            mana = str(item['cost'])
+            # RARITY
+            rarity = item['rarity']
+            # ARTIST
+            artist = item["artist"]
+            # COLLECTIBLE - bool
+            collectible = bool(item["collectible"])
+            # FLAVOR TEXT
+            flavor = item["flavor"]
+            # SET
+            card_set = item["set"]
+            # WEAPON DURABILITY
+            weapon_durability = item[""]
 
+            if item["rarity"] == "COMMON":
+                dust_cost = 40
+                golden_dust_cost = 400
+                dust_value = 5
+                golden_dust_value = 50
+
+            elif item["rarity"] == "RARE":
+                dust_cost = 100
+                golden_dust_cost = 800
+                dust_value = 20
+                golden_dust_value = 100
+
+            elif item["rarity"] == "EPIC":
+                dust_cost = 400
+                golden_dust_cost = 1600
+                dust_value = 100
+                golden_dust_value = 400
+
+            elif item["rarity"] == "LEGENDARY":
+                dust_cost = 1600
+                golden_dust_cost = 3200
+                dust_value = 400
+                golden_dust_value = 1600
+
+            elif item["rarity"] == "FREE":
+                dust_cost = 0
+                golden_dust_cost = 0
+                dust_value = 0
+                golden_dust_value = 0
+
+            card_result = Card(card_id='id',
+                               type='type',
+                               card_name='name',
+                               mana_cost='mana',
+                               rarity='rarity',
+                               artist='artist',
+                               collectible='collectible',
+                               flavor_text='flavor',
+                               card_set='card_set',
+                               weapon_durability='durability',
+                               dust_cost='dust_cost',
+                               dust_value='dust_value',
+                               golden_dust_cost='golden_dust_cost',
+                               golden_dust_value='golden_dust_value',
+                               )
+
+            Card.objects.create(card_result)
+            print("Added " + card_result.card_name + " to database..")
+
+
+## test method
+def add_cards_to_site_db(current_catalog):
 
     for item in current_catalog:
         if item["type"] == 'MINION':
@@ -137,7 +291,7 @@ def add_cards_to_site_db():
             mechanics = item["mechanics"]
             # PLAYER CLASS
             player_class = item["playerClass"]
-            # CARD TEXT
+
             text = item["text"]
 
             if item["rarity"] == "COMMON":
