@@ -20,6 +20,11 @@
                 <br>
             </div>
         </div>
+        <div class="section">
+            {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'cardsearch.views.card_add' pk=card.pk %}">Add to Collection</a>
+            {% endif %}
+        </div>
 
     {% endfor %}
 {% endblock %}

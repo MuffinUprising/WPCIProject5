@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Card
 import json
-
+from django.contrib.auth.decorators import login_required
 
 # INDEX
 def index(request):
@@ -27,6 +27,15 @@ def card_list(request):
 def card_detail(request, pk):
     card = get_object_or_404(Card, pk=pk)
     return render(request, 'cardsearch/card_detail.html', {'card': card})
+
+
+# ADD CARD TO COLLECTION
+@login_required
+def card_add(request, pk):
+    card = get_object_or_404(Card, pk=pk)
+    card.save()
+    return redirect('card.views.card_detail', pk=pk)
+
 
 
 #PULL FROM JSON AND ADD TO DB

@@ -6,11 +6,19 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/cardsearch.css' %}">
         <link href='https://fonts.googleapis.com/css?family=IM+Fell+English' rel='stylesheet' type='text/css'>
+
     </head>
     <body>
         <div class="page-header">
+
             <h1><a href="/">WPCI</a></h1>
             <h3>Wizard Poker Card Index</h3>
+            {% if user.is_authenticated %}
+            <h4 class="top-menu">Hello, {{ user.username }}<small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></h4>
+            {% else %}
+            <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+            {% endif %}
+
         </div>
 
         <div class="search">

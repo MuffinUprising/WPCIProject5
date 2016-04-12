@@ -1,7 +1,7 @@
 .page-header {
     background-color: #8A682B;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 10px 10px 50px 60px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -12,15 +12,22 @@
 
 .page_header h3, .page-header h3 a, .page-header h3 a:visited, .page-header h3 a:active  {
     color: #ffffff;
-    font-size: 12pt;
+    font-size: 10pt;
     margin-top: 0;
+}
+.top-menu h4, .top-menu h4a, .top-menu h4 {
+    color: #8A682B;
+    font-size: 12pt;
+    margin-bottom: 30;
+    font-family: 'IM Fell English';
+
 }
 
 .content {
     margin-left: 40px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     color: #FFFFFF;
     font-family: 'IM Fell English';
 }
