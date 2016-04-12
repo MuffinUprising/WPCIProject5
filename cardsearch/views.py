@@ -2,27 +2,34 @@ from django.shortcuts import render, get_object_or_404
 from .models import Card
 import json
 
-def index(request):
 
+# INDEX
+def index(request):
     return render(request, 'cardsearch/base.html', {})
 
+
+# SEARCH
 def search(request):
+    #user query
     q = request.GET.get('user_query')
     return_cards = search_for_card_by_name(q)
     return render(request, 'cardsearch/card_list.html', {'cards': return_cards})
 
 
-
+# CARD LIST
 def card_list(request):
     # add_minions_to_site_db()
     cards = Card.objects.filter().order_by('card_name')
     return render(request, 'cardsearch/card_list.html', {'cards': cards})
 
 
+# CARD DETAIL
 def card_detail(request, pk):
     card = get_object_or_404(Card, pk=pk)
     return render(request, 'cardsearch/card_detail.html', {'card': card})
 
+
+#PULL FROM JSON AND ADD TO DB
 def add_minions_to_site_db():
     current_catalog = json.loads(open('json_files/cards.collectible.json').read())
 
@@ -90,7 +97,7 @@ def add_minions_to_site_db():
 
             print("Added " + item['name'] + " to database..")
 
-
+# SEARCH FOR CARD BY NAME
 def search_for_card_by_name(q):
 
     cards = Card.objects.filter(card_name__icontains=q)
@@ -101,7 +108,7 @@ def search_for_card_by_name(q):
     return return_cards
 
 
-
+# TEST METHOD
 def add_cards_to_site_db():
     current_catalog = json.loads(open('json_files/cards.collectible.json').read())
 
