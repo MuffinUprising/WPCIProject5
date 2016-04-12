@@ -2,16 +2,24 @@
 
 {% block content %}
     {% for card in cards %}
-        <div class="card">
-            <div class="name">
-                <h2><a href="{% url 'card_detail' pk=card.pk %}">{{ card.card_name }}</a></h2>
+        <div class="section">
+                <div class="image" style="float:left; margin-right:10px; margin-top:1px">
+                    <img src="http://wow.zamimg.com/images/hearthstone/cards/enus/original/{{ card.card_id }}.png?10871" height="210">
+                </div>
             </div>
-            <p>Card Type: {{ card.type }}</p>
-            <p>Mana Cost: {{ card.mana_cost }}</p>
-            <p>Rarity: {{ card.rarity }}</p>
-            <p>Attack: {{ card.attack }}</p>
-            <p>Health: {{ card.health }}</p>
-            <br>
+        <div class="section">
+            <div class="card">
+                <div class="name">
+                    <h2><a href="{% url 'card_detail' pk=card.pk %}">{{ card.card_name }}</a></h2>
+                </div>
+                <p>Card Type: {{ card.type }}</p>
+                <p>Mana Cost: {{ card.mana_cost }}</p>
+                <p>Rarity: {{ card.rarity }}</p>
+                <p>Attack: {{ card.attack }}</p>
+                <p>Health: {{ card.health }}</p>
+                <br>
+            </div>
         </div>
+
     {% endfor %}
 {% endblock %}
